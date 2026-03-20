@@ -12,10 +12,10 @@ export const BRAND = {
       `Halo kak, saya tertarik dengan ${productName}. Apakah masih tersedia?`,
   },
   social: {
-    instagram: "https://instagram.com/",
-    tiktok: "https://tiktok.com/",
+    instagram: "https://www.instagram.com/nibrashouse_palembang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    tiktok: "https://www.tiktok.com/@nibrashousepalembang?is_from_webapp=1&sender_device=pc",
     facebook: "https://facebook.com/",
-    shopee: "https://shopee.co.id/",
+    shopee: "https://shopee.co.id/nibrashousepalemban",
     tokopedia: "https://tokopedia.com/",
     tiktokShop: "https://tiktok.com/",
   },
