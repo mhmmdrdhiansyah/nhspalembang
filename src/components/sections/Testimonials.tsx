@@ -105,7 +105,6 @@ export default function Testimonials() {
 
                     <div>
                       <h4 className="font-bold text-gray-900 text-sm">{review.name}</h4>
-                      <p className="text-xs text-gray-500">{review.relativeTime}</p>
                     </div>
                     {/* Small Google indicator */}
                     <div className="ml-auto w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center">

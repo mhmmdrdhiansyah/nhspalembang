@@ -81,7 +81,7 @@ export default function CTA() {
                 rel="noopener noreferrer"
                 className={`inline-flex items-center gap-3 bg-white border border-gray-100 shadow-sm text-gray-700 px-6 py-3 rounded-xl text-sm font-semibold hover:bg-gray-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-md ${marketplace.color}`}
               >
-                <div className="relative w-6 h-6">
+                <div className="relative w-6 h-6 shrink-0">
                   <Image
                     src={marketplace.logo}
                     alt={`${marketplace.name} logo`}
