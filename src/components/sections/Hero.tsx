@@ -48,13 +48,13 @@ export default function Hero() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-end sm:items-center pb-8 sm:pb-0 pt-28 sm:pt-0">
         {/* Floating White Card */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-white mt-16 sm:mt-20 w-full max-w-sm sm:max-w-lg h-[80vh] min-h-[550px] max-h-[750px] flex flex-col justify-between p-8 sm:p-12 md:ml-0 shadow-2xl rounded-sm"
+          className="bg-white/95 backdrop-blur-md sm:bg-white sm:backdrop-blur-none sm:mt-20 w-full max-w-full sm:max-w-lg h-auto sm:h-[80vh] min-h-[400px] sm:min-h-[550px] max-h-[750px] flex flex-col justify-between p-7 sm:p-12 md:ml-0 shadow-2xl rounded-3xl sm:rounded-sm border border-white/40 sm:border-none"
         >
           {/* Top Line Indicators */}
           <div className="flex gap-2">
@@ -72,7 +72,7 @@ export default function Hero() {
           </div>
 
           {/* Bottom Content Area */}
-          <div className="mt-auto">
+          <div className="mt-10 sm:mt-auto">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
