@@ -46,18 +46,24 @@ export default function FeaturedProducts() {
         subtitle="Produk-produk terfavorit pilihan pelanggan kami"
       />
 
+      <div className="flex items-center justify-center gap-3 mb-10 opacity-70">
+        <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent to-brand-pink"></div>
+        <Sparkles className="w-5 h-5 text-brand-pink" />
+        <div className="h-px w-16 md:w-24 bg-gradient-to-l from-transparent to-brand-pink"></div>
+      </div>
+
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
-        className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"
+        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
       >
         {featuredProducts.map((product, index) => (
           <motion.div
             key={product.id}
             variants={cardVariants}
-            className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl hover:shadow-brand-pink/10 transition-all duration-300 hover:-translate-y-1"
+            className="group product-card-glow bg-white rounded-3xl overflow-hidden border border-gray-100 flex flex-col h-full relative"
           >
             {/* Image Placeholder */}
             <div className={`relative aspect-[3/4] overflow-hidden bg-gradient-to-br ${productGradients[index % productGradients.length]}`}>
@@ -69,58 +75,73 @@ export default function FeaturedProducts() {
                 <div className="w-16 h-16 rounded-2xl bg-white/60 flex items-center justify-center shadow-sm">
                   <ShoppingBag className={`w-8 h-8 ${productIconColors[index % productIconColors.length]}`} />
                 </div>
-                <div className="flex items-center gap-1">
-                  <Tag className={`w-3 h-3 ${productIconColors[index % productIconColors.length]}`} />
-                  <span className="text-xs font-medium text-gray-400">{product.category}</span>
-                </div>
               </div>
 
               {/* Badge */}
               {product.badge && (
                 <div className="absolute top-3 left-3 z-10">
-                  <Badge variant={product.badge === "Best Seller" ? "bestseller" : "new"}>
+                  <Badge variant={product.badge === "Best Seller" ? "bestseller" : "new"} className="badge-glow">
                     {product.badge}
                   </Badge>
                 </div>
               )}
 
-              {/* WhatsApp overlay on hover */}
-              <div className="absolute inset-0 bg-brand-purple/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
+              {/* Hover Overlay with WhatsApp CTA sliding up */}
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-purple/90 via-brand-purple/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-10 hidden md:flex items-end justify-center h-1/2">
                 <a
                   href={getWhatsAppUrl(BRAND.whatsapp.productMessage(product.name))}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-[#25D366] text-white px-5 py-3 rounded-xl font-semibold hover:bg-[#20BD5A] transition-colors transform translate-y-2 group-hover:translate-y-0 duration-300"
+                  className="w-full flex justify-center items-center gap-2 bg-[#25D366] text-white py-2.5 rounded-xl font-semibold text-sm hover:bg-[#20BD5A] transition-colors shadow-lg shadow-[#25D366]/30 mb-2"
                 >
-                  <MessageCircle className="w-5 h-5" />
+                  <MessageCircle className="w-4 h-4" />
                   Order WhatsApp
                 </a>
               </div>
             </div>
 
             {/* Info */}
-            <div className="p-4">
-              <p className="text-xs text-brand-text-muted uppercase tracking-wide mb-1">
-                {product.category}
-              </p>
-              <h3 className="font-semibold text-brand-text text-sm md:text-base mb-2 line-clamp-2 group-hover:text-brand-pink transition-colors">
+            <div className="p-4 flex flex-col flex-grow relative z-20 bg-white">
+              <div className="flex items-center gap-1.5 mb-2">
+                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-brand-support text-brand-purple text-[10px] font-semibold uppercase tracking-wider">
+                  <Tag className="w-3 h-3" />
+                  {product.category}
+                </span>
+              </div>
+              <h3 className="font-semibold text-brand-text text-sm mb-3 line-clamp-2 group-hover:text-brand-pink transition-colors">
                 {product.name}
               </h3>
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-brand-pink font-bold text-lg">
-                  {formatPrice(product.price)}
-                </span>
-                {product.originalPrice && (
-                  <span className="text-brand-text-muted text-sm line-through">
-                    {formatPrice(product.originalPrice)}
+              
+              <div className="mt-auto">
+                <div className="flex items-baseline gap-2 flex-wrap mb-1">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-brand-purple font-bold text-lg">
+                    {formatPrice(product.price)}
                   </span>
+                </div>
+                {product.originalPrice && (
+                  <div className="flex items-center justify-between">
+                    <span className="text-brand-text-muted text-xs line-through">
+                      {formatPrice(product.originalPrice)}
+                    </span>
+                    <span className="text-[10px] bg-brand-orange-light/20 text-brand-orange px-2 py-0.5 rounded-full font-bold">
+                      Hemat {formatPrice(product.originalPrice - product.price)}
+                    </span>
+                  </div>
                 )}
               </div>
-              {product.originalPrice && (
-                <span className="inline-block mt-1 text-xs text-brand-orange font-semibold">
-                  Hemat {formatPrice(product.originalPrice - product.price)}
-                </span>
-              )}
+
+              {/* Mobile CTA (visible only on small screens) */}
+              <div className="mt-4 md:hidden">
+                <a
+                  href={getWhatsAppUrl(BRAND.whatsapp.productMessage(product.name))}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex justify-center items-center gap-2 bg-[#25D366]/10 text-[#25D366] py-2 rounded-xl font-semibold text-sm active:bg-[#25D366] active:text-white transition-colors"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  Beli
+                </a>
+              </div>
             </div>
           </motion.div>
         ))}

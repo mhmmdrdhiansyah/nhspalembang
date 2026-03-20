@@ -76,6 +76,26 @@ export const featuredProducts: Product[] = [
     category: "Anak-Anak",
     description: "Gamis anak perempuan dengan motif bunga, bahan katun lembut",
   },
+  {
+    id: 7,
+    name: "Dress Muslimah — Mocca",
+    slug: "dress-muslimah-mocca",
+    image: "/images/products/dress-mocca.jpg",
+    price: 189000,
+    originalPrice: 259000,
+    category: "Dress Wanita",
+    description: "Dress muslimah dengan detail layer elegan material cerruty babydoll",
+  },
+  {
+    id: 8,
+    name: "Tunik Basic — Hitam",
+    slug: "tunik-basic-hitam",
+    image: "/images/products/tunik-hitam.jpg",
+    price: 129000,
+    badge: "Best Seller",
+    category: "Tunik",
+    description: "Tunik basic cocok untuk daily atau kerja, bahan rayon super adem",
+  },
 ];
 
 export function formatPrice(price: number): string {
