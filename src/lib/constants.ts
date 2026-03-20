@@ -1,5 +1,5 @@
 export const BRAND = {
-  name: "Cantik & Unik",
+  name: "NBRS House Palembang",
   tagline: "Fashion Muslim Keluarga yang Cantik & Unik",
   description:
     "Brand fashion Muslim Indonesia dengan koleksi family matching — koko dan gamis yang cantik, syar'i, dan terjangkau untuk seluruh keluarga.",

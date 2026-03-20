@@ -45,8 +45,8 @@ export default function Header() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500 w-full",
           isScrolled
-            ? "bg-white/95 backdrop-blur-xl shadow-lg shadow-brand-purple/5 py-4 border-b border-gray-100"
-            : "bg-transparent py-6"
+            ? "bg-white/95 backdrop-blur-xl shadow-lg shadow-brand-purple/5 py-4 lg:py-5 border-b border-gray-100"
+            : "bg-transparent py-7 lg:py-9"
         )}
       >
         <div className="w-full px-6 md:px-12 lg:px-16 mx-auto flex items-center justify-between">
@@ -74,14 +74,14 @@ export default function Header() {
                 href={link.href}
                 onMouseEnter={() => setHoveredLink(link.href)}
                 className={cn(
-                  "relative block px-4 py-2 text-sm xl:text-base font-semibold tracking-wide transition-colors duration-300",
+                  "relative px-4 py-2 text-sm xl:text-base font-semibold tracking-wide transition-colors duration-300",
                   isScrolled
                     ? hoveredLink === link.href ? "text-brand-pink" : "text-brand-text"
                     : hoveredLink === link.href ? "text-white" : "text-white/85"
                 )}
               >
                 <span className="relative z-10">{link.label}</span>
-                
+
                 {/* Floating pill background on hover */}
                 {hoveredLink === link.href && (
                   <motion.div
@@ -127,13 +127,13 @@ export default function Header() {
             >
               {/* Refined Shine effect that moves constantly on hover */}
               <div className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
-              
+
               <MessageCircle className={cn(
-                "w-5 h-5 relative z-10 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110", 
+                "w-5 h-5 relative z-10 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110",
                 isScrolled ? "text-white" : "text-brand-pink"
               )} />
               <span className="relative z-10">Pesan Sekarang</span>
-              
+
               {/* Glowing Notification Dot indicator to increase urgency */}
               <span className="relative z-10 flex h-2.5 w-2.5 ml-0.5">
                 <span className={cn(
