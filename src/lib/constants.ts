@@ -14,10 +14,10 @@ export const BRAND = {
   social: {
     instagram: "https://www.instagram.com/nibrashouse_palembang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     tiktok: "https://www.tiktok.com/@nibrashousepalembang?is_from_webapp=1&sender_device=pc",
-    facebook: "https://facebook.com/",
-    shopee: "https://shopee.co.id/nibrashousepalemban",
+    facebook: "https://www.facebook.com/nhspalembang",
+    shopee: "https://shopee.co.id/nibrashousepalembang",
     tokopedia: "https://tokopedia.com/",
-    tiktokShop: "https://tiktok.com/",
+    tiktokShop: "https://www.tiktok.com/@nibrashousepalembang?is_from_webapp=1&sender_device=pc",
   },
   email: "info@cantikdanunik.com",
 } as const;
