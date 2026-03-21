@@ -1,15 +1,16 @@
 export const BRAND = {
   name: "NBRS House Palembang",
-  tagline: "Fashion Muslim Keluarga yang Cantik & Unik",
+  tagline: "Pusat Baju Muslim, Gamis & Koko di Palembang",
   description:
-    "Brand fashion Muslim Indonesia dengan koleksi family matching — koko dan gamis yang cantik, syar'i, dan terjangkau untuk seluruh keluarga.",
+    "NBRS House Palembang (Nibras House) menyediakan rujukan fashion Muslim terlengkap. Temukan berbagai koleksi baju muslim, gamis, koko, dan busana keluarga yang cantik, syar'i, dan premium di Palembang.",
   whatsapp: {
     number: "6282175175810",
     generalMessage:
-      "Halo kak, saya tertarik melihat koleksi family matching. Bisa dibantu?",
-    orderMessage: "Halo kak, saya ingin order. Bisa dibantu?",
+      "Assalamu'alaikum Admin NBRS House Palembang, saya baru saja lihat website-nya. Koleksinya bagus-bagus! 😍\n\nBoleh tanya-tanya dulu untuk koleksi yang terbaru?",
+    orderMessage: 
+      "Assalamu'alaikum Admin NBRS House Palembang, saya baru saja lihat website-nya. Koleksinya bagus-bagus! 😍\n\nBoleh tanya-tanya dulu untuk koleksi yang terbaru?",
     productMessage: (productName: string) =>
-      `Halo kak, saya tertarik dengan ${productName}. Apakah masih tersedia?`,
+      `Assalamu'alaikum Admin NBRS House Palembang, saya baru saja lihat website-nya. Koleksinya bagus-bagus! 😍\n\nBoleh tanya-tanya dulu untuk koleksi ${productName}?`,
   },
   social: {
     instagram: "https://www.instagram.com/nibrashouse_palembang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
